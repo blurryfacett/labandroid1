@@ -10,6 +10,7 @@ import javax.microedition.khronos.opengles.GL10;
 public class MyRenderer implements Renderer
 {
     private cube mCube = new cube();
+    private sphera mSphere = new sphera();
     private float mCubeRotation;
 
     @Override
@@ -29,6 +30,7 @@ public class MyRenderer implements Renderer
         gl.glRotatef(mCubeRotation, 0f, 1.0f, 0f);
 
         mCube.draw(gl);
+        mSphere.draw(gl);
         gl.glLoadIdentity();
 
         mCubeRotation -= 1.0f;
@@ -41,7 +43,6 @@ public class MyRenderer implements Renderer
         gl.glLoadIdentity();
         GLU.gluPerspective(gl, 45.0f, (float)width / (float)height, 0.1f, 100.0f);
         gl.glViewport(0, 0, width, height);
-
         gl.glMatrixMode(GL10.GL_MODELVIEW);
         gl.glLoadIdentity();
     }
