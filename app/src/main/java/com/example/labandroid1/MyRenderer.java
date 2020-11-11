@@ -11,6 +11,7 @@ public class MyRenderer implements Renderer
 {
     private cube mCube = new cube();
     private sphera mSphere = new sphera();
+    private kvadrat mSquare = new kvadrat();
     private float mCubeRotation;
 
     @Override
@@ -31,6 +32,7 @@ public class MyRenderer implements Renderer
 
         mCube.draw(gl);
         mSphere.draw(gl);
+        mSquare.draw(gl);
         gl.glLoadIdentity();
 
         mCubeRotation -= 1.0f;
